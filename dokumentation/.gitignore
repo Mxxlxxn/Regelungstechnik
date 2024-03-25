@@ -30,4 +30,5 @@
 *.blg
 *.xml
 *ltex.*
-.\.vscode\*
+vscode/*
+svg-inkscape/*
