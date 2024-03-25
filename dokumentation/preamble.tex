@@ -1,0 +1,119 @@
+%-------------------------------------------------------------------------------------------------
+%   Packages
+%-------------------------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}                         % utf8 as input encoding
+\usepackage[T1]{fontenc}                            % 8bit font encdoing
+\usepackage[ngerman]{babel}                         % word seperation
+\usepackage{microtype}                              % font expansion
+\usepackage{libertine}                              % select font
+\usepackage[libertine]{newtxmath}                   % select font for mathmode
+\usepackage{scrlayer-scrpage}                       % Bessere Kopfzeilen
+
+\usepackage[
+    locale=DE,
+    detect-all,
+    per-mode=fraction,
+]{siunitx}                                          % express SI units
+\usepackage{amsmath}
+\usepackage{booktabs}                               % better tables
+\usepackage{tabularx}                               % tables with pagewidth
+\usepackage{graphicx}                               % input pictures
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{flushend}
+
+\usepackage{csquotes}                               % quote environment
+\usepackage[
+    backend=biber,
+    style=ieee,
+]{biblatex}                                          % source control
+
+\usepackage{hyperref}                               % add hyperlinks
+
+%-------------------------------------------------------------------------------------------------
+%   Colors
+%-------------------------------------------------------------------------------------------------
+
+% \definecolor{colorblue}{HTML}{0480CC}				% color for weblinks
+% \definecolor{colordarkblue}{HTML}{4C1DCC}			% no use case at the moment
+% \definecolor{colorgreen}{HTML}{26CC1B}				% color for citations
+% \definecolor{colorred}{HTML}{CC1204}				% color for pdf links
+\definecolor{coloryellow}{HTML}{F0B707}			    % color for warnings
+
+%-------------------------------------------------------------------------------------------------
+%   Lengths
+%-------------------------------------------------------------------------------------------------
+
+\newlength{\imagewidth}
+\setlength{\imagewidth}{0.7\columnwidth}
+
+%-------------------------------------------------------------------------------------------------
+%   Style Options
+%-------------------------------------------------------------------------------------------------
+
+\KOMAoptions{
+    toc     =   listof,                                     % add table of figures in 
+    % headsepline=true,                               % switch header rule
+    numbers =   noendperiod,
+}
+
+\hypersetup{
+    colorlinks=true,
+    bookmarksnumbered=true,
+}
+
+\chead{Laborbericht Regelungstechnik}
+\ohead{Versuch Nr. \printlabor}
+\ihead{Jan Hoegen}
+
+\flushbottom                                        % fill pages to bottom
+
+\addbibresource{quellen.bib}
+
+%-------------------------------------------------------------------------------------------------
+%   Macros
+%-------------------------------------------------------------------------------------------------
+        
+\newcommand{\missing}{%
+    \textcolor{coloryellow}{MISSING}%
+    \PackageWarning{rtl_labor}{You used the 'missing' macro at this line. Remove it before finalising document}%
+}
+\newcommand{\improve}{%
+    \textcolor{coloryellow}{IMPROVE}%
+    \PackageWarning{rtl_labor}{You used the 'improve' macro at this line. Remove it before finalising document}%
+}
+
+\newcommand{\legend}[1]{\par\footnotesize\textbf{Legende}: #1\par}
+\newcommand{\figsource}[1]{\par\footnotesize\textbf{Quelle:} #1\par}
+
+%-------------------------------------------------------------------------------------------------
+%   Title Page
+%-------------------------------------------------------------------------------------------------
+
+\titlehead{%
+    Hochschule Karlsruhe\\
+    University of Applied Sciences\\
+    Fakultät für Elektro- und Informationstechnik
+}
+\title{Laborbericht Regelungstechnik}
+
+\publishers{Betreuer: Prof. Dr. Keller}
+
+\author{%
+    Jan Hoegen\thanks{%
+        Matrikel-Nr. 82358. E-Mail \href{jan.hoegen@web,de}{jan.hoegen@web,de}}%
+    % \and%
+    % Rithik Kurmar\thanks{%
+    %     Matrikel-Nr. . E-mail \href{}{}}
+}
+
+\newcommand{\labor}[1]{\newcommand{\printlabor}{#1}}
+
+\AtBeginDocument{
+    \subtitle{Versuch Nr.~\printlabor}
+    
+    \hypersetup{
+        pdftitle = {RT Labor \printlabor\ | Hoegen},
+    }
+}

@@ -1,0 +1,83 @@
+% !TeX TXS-program:bibliography = txs:///biber
+
+\documentclass[
+    paper=a4,
+    fontsize=10pt,
+    DIV=calc,
+    twocolumn,
+    oneside,
+]{scrartcl}
+
+%-------------------------------------------------------------------------------------------------
+%   Packages, Style Guide
+%-------------------------------------------------------------------------------------------------
+
+\input{preamble}
+
+%-------------------------------------------------------------------------------------------------
+%   Title Page
+%-------------------------------------------------------------------------------------------------
+
+\labor{1}
+\date{\today}
+
+%-------------------------------------------------------------------------------------------------
+%   Begin
+%-------------------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%-------------------------------------------------------------------------------------------------
+%   Abstract
+%-------------------------------------------------------------------------------------------------
+
+% \begin{abstract}
+%     \noindent    
+%     \subsubsection*{Abstract}
+%     \blindtext
+% \end{abstract}
+
+%-------------------------------------------------------------------------------------------------
+%   Text
+%-------------------------------------------------------------------------------------------------
+
+\section{Darstellung von Sinussignalen}
+    Die Funktionen aus der Versuchsanleitung \cite{versuch1} werden mit MatLab simuliert und in Abbildung \ref{fig:a1} dargestellt.
+
+    \begin{align}
+        x_1(t) &= 2 \cdot sin(2\pi \cdot \SI{2}{\kilo\hertz} \cdot t)\\
+        x_1(t) &= 2 \cdot sin(2\pi \cdot \SI{6}{\kilo\hertz} \cdot t - \frac{\pi}{4})
+    \end{align}
+
+    \begin{figure}[hbt]
+        \centering
+        \includesvg[width=\imagewidth]{../versuch1/task1.svg}
+        \caption{Darstellung der Sinussignale}
+        \label{fig:a1}
+    \end{figure}
+
+% \section{Kapitel}
+%     lorem ispum siehe Tabelle \ref{fig:bsp}.
+
+%     \begin{table}[hbt]
+%         \centering
+%         \begin{tabular}{rrr}\toprule
+%             {}      &   \multicolumn{2}{c}{berechnet}\\\cmidrule{2-3}
+%             Größe 1 &   Größe 2 &   Größe 3\\\midrule
+%             1       &   2       &   3\\
+%             4       &   5       &   6\\\bottomrule
+%         \end{tabular}
+%         \caption{Beispieltabelle}
+%         \label{tab:bsp}
+%         \legend{Hier steht die Legende.}
+%     \end{table}
+
+%-------------------------------------------------------------------------------------------------
+%   End
+%-------------------------------------------------------------------------------------------------
+
+\printbibliography[heading=bibnumbered]
+
+\end{document}
