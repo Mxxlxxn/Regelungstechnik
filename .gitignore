@@ -6,7 +6,7 @@
 *.toc
 *svg-tex*
 *synctex*
-.\svg-inkscape
+*.\svg-inkscape
 *.dvi
 *fdb_latexmk
 *.fls
@@ -30,5 +30,8 @@
 *.blg
 *.xml
 *ltex.*
-vscode/*
-svg-inkscape/*
+*vscode/*
+*svg-inkscape*
+*.bbl*
+*.bcf*
+*slprj*

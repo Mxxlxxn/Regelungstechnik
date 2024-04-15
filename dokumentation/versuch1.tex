@@ -72,6 +72,18 @@
             \label{fig:a1-2}
         \end{figure}
 
+\section{Tiefpassanalyse}
+    Für einen Tiefpass erster Ordnung mit einer Grenzfrequenz von \SI{100}{\kilo\hertz} berechnen sich die Bauteilwerte zu:
+
+    \begin{align}
+        \frac{U_a}{U_e} = \frac{1}{1+jwRC}
+    \end{align}
+    und somit 
+    \begin{align}
+        f_g &= \frac{1}{2 \pi RC} \overset{!}{=} \SI{10e7}{\hertz}
+    \end{align}
+
+
 % \section{Kapitel}
 %     lorem ispum siehe Tabelle \ref{fig:bsp}.
 
@@ -89,9 +101,20 @@
 %     \end{table}
 
 %-------------------------------------------------------------------------------------------------
-%   End
+%   Biblography
 %-------------------------------------------------------------------------------------------------
 
 \printbibliography[heading=bibnumbered]
+
+%-------------------------------------------------------------------------------------------------
+%   enclosure
+%-------------------------------------------------------------------------------------------------
+
+\appendix
+\section{Anhang}
+
+    \lstinputlisting[language=MATLAB]{../versuch1/task1.m}
+
+    \lstinputlisting[language=MATLAB]{../versuch1/task2.m}
 
 \end{document}
